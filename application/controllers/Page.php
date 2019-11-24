@@ -66,7 +66,7 @@ class Page extends CI_Controller
 		$config['white']		= array(70, 130, 180); // array, default is array(0,0,0)
 		$this->ciqrcode->initialize($config);
 
-		$image_name = $encode. '.png'; //buat name dari qr code sesuai dengan id_sepatu
+		$image_name = $encode. '.png'; //buat name dari qr code sesuai dengan 
 
 		$params['data'] = $encode; //data yang akan di jadikan QR CODE
 		$params['level'] = 'H'; //H=High
@@ -77,7 +77,7 @@ class Page extends CI_Controller
 
         $data = array(
         
-           'kode_lapak' => $encode,
+           'kode_lapak' => $kode_lapak,
 		   'lokasi_lapak' => $lokasi_lapak,
 		   'harga_lapak' => $harga_lapak,
 		   

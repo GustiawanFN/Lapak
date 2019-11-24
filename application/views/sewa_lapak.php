@@ -46,6 +46,7 @@
                                          $kode_pedagang = $value->kode_pedagang;
                                     $nama_pedagang = $value->nama_pedagang;
                                     $alamat_pedagang = $value->alamat_pedagang;?>
+
                                     
                                     <option value="<?=$kode_pedagang?>" > <?=$nama_pedagang?> </option>                                    <?php } ?> 
 

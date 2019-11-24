@@ -48,11 +48,11 @@
                       <td><?php echo $value->harga_lapak ?></td>
                       <td>
                           <?php 
-                          $status = $value->tersedia;
+                          $status = $value->kode_pedagang;
 
                           if ($status == 0){
                             echo "<button class='btn btn-success'>TERSEDIA</button>";
-                          } else if ($status == 1) {
+                          } else  {
                             echo "<button class='btn btn-warning'><i class='fa fa-warning'></i><span> Ditempati </span></button>";
                           }?>
                       </td>
@@ -67,7 +67,7 @@
                           }
                           ?>
                       </td>
-                      <td><img style="width: 100px;" src="<?php echo base_url().'assets/images/'.$value->kode_lapak.'.png' ?>"></td>
+                      <td><img style="width: 100px;" src="<?php echo base_url().'assets/images/'.$value->qrcode ?>"></td>
                       <td>
                         <a href='#largeModal' data-toggle="modal" data-target="#largeModal<?php echo $value->kode_lapak ?>" class='btn btn-primary'>EDIT</a>
                         <a href='<?php echo base_url(); ?>index.php/page/hapus/<?php echo $value->kode_lapak ?>' class='btn btn-danger'>Hapus</a>

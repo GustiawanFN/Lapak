@@ -10,6 +10,10 @@ class M_Page extends CI_Model {
 		return $this->db->get('tbl_lapak');
 	}
 
+	function join(){
+		
+	}
+
 	//List Pedagang
 	function list_pedagang(){
 		return $this->db->get('tbl_pedagang');

@@ -158,6 +158,27 @@
 
                                     </ul>
                                 </li>
+
+                                <li <?php
+                                    if (($this->uri->segment(2) == 'data_laporan')) {
+                                        echo 'class="active"';
+                                    }
+                                    ?>>
+                                    <a href="#forms" class="has-arrow"><i class="icon-pencil"></i> <span>Laporan </span></a>
+                                    <ul>
+
+                                    
+                                    <li <?php
+                                                if ($this->uri->segment(2) == 'data_laporan') {
+                                                    echo 'class="active"';
+                                                }
+                                                ?>><a href="<?php echo base_url(); ?>index.php/page_laporan/data_laporan">Iuran Sewa</a>
+                                        </li>
+                                        
+
+
+                                    </ul>
+                                </li>
                             </ul>
                         </nav>
                     </div>
