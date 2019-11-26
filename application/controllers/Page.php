@@ -96,8 +96,8 @@ class Page extends CI_Controller
 	public function kelola_data_lapak()
 	{
 		
-		$data['lapak'] = $this->M_page->tampil_data()->result();
-		$data['pedagang'] = $this->M_page->list_pedagang()->result();
+		$data['lapak'] = $this->M_page->tampil_data_join();
+		
 
 		$data['judul'] = "Data Lapak";
 		$data['page_name'] = 'kelola_lapak.php';

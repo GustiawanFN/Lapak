@@ -18,7 +18,7 @@ class M_Page_transaksi extends CI_Model {
 		$this->db->insert($table,$data);		
 	}
 
-	function edit($where,$data,$table){
+	function edit($where, $data, $table){
 		$this->db->where($where);
 		$this->db->update($table,$data);
 	}

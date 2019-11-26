@@ -1,11 +1,3 @@
-<?php
-          foreach ($lapak as $key => $value) {
-            $kode_lapak = $value->kode_lapak;
-          
-
-         
-            ?>
-               <?php } ?>
 
 <div id="wrapper">
     <div id="main-content">
@@ -30,9 +22,13 @@
                         <div class="header">
 
                         </div>
+                        <?php
+                        //get URI kode lapak
+                        $kode_lapak = $this->uri->segment(3) ;
+                        ?>
 
                         <div class="body">
-                            <form id="basic-form" action="<?php echo base_url(); ?>index.php/page_transaksi/edit/<?php echo $value->kode_lapak ?>" method="post">
+                            <form id="basic-form" action="<?php echo base_url(); ?>index.php/page_transaksi/edit/<?php echo $kode_lapak?>" method="post">
                                 <div class="col-md-18">
                                     
 
@@ -43,12 +39,12 @@
 
                                     <?php 
                                      foreach ($pedagang as $key => $value) {
-                                         $kode_pedagang = $value->kode_pedagang;
+                                    $kode_pedagang = $value->kode_pedagang;
                                     $nama_pedagang = $value->nama_pedagang;
                                     $alamat_pedagang = $value->alamat_pedagang;?>
 
                                     
-                                    <option value="<?=$kode_pedagang?>" > <?=$nama_pedagang?> </option>                                    <?php } ?> 
+                                    <option value="<?=$kode_pedagang?>"> <?=$nama_pedagang?> </option>                                    <?php } ?> 
 
                                 </select>
                                 </div>

@@ -39,39 +39,32 @@
                   <tbody>
                     <?php
                     $no = 1;
-                    foreach ($lapak as $key => $value) { ?>
+                    foreach ($lapak as $row) { ?>
 
                     <tr>
                       <td><?php echo $no++ ?></td>
-                      <td><?php echo $value->kode_lapak ?></td>
-                      <td><?php echo $value->lokasi_lapak ?></td>
-                      <td><?php echo $value->harga_lapak ?></td>
+                      <td><?=$row->kode_lapak?></td>
+                      <td><?=$row->lokasi_lapak?></td>
+                      <td><?=$row->harga_lapak?></td>
                       <td>
-                          <?php 
-                          $status = $value->kode_pedagang;
+                        <?php 
+                          $status = $row->nama_pedagang;
 
-                          if ($status == 0){
+                          if ($status == ""){
                             echo "<button class='btn btn-success'>TERSEDIA</button>";
                           } else  {
                             echo "<button class='btn btn-warning'><i class='fa fa-warning'></i><span> Ditempati </span></button>";
-                          }?>
+                          }?> 
                       </td>
                       <td>
-                          <?php
-                          $pedagang = $value->kode_pedagang;
-
-                          if($pedagang == 0 ){
-                              echo "-";
-                          }else{
-                              echo $pedagang;
-                          }
-                          ?>
+                      <?=$row->nama_pedagang?>
                       </td>
-                      <td><img style="width: 100px;" src="<?php echo base_url().'assets/images/'.$value->qrcode ?>"></td>
+                      <td><img style="width: 100px;" src="<?php echo base_url().'assets/images/'.$row->qrcode?>"></td>
                       <td>
-                        <a href='#largeModal' data-toggle="modal" data-target="#largeModal<?php echo $value->kode_lapak ?>" class='btn btn-primary'>EDIT</a>
-                        <a href='<?php echo base_url(); ?>index.php/page/hapus/<?php echo $value->kode_lapak ?>' class='btn btn-danger'>Hapus</a>
-                        <a href='<?php echo base_url(); ?>index.php/page_transaksi/sewa_lapak/<?php echo $value->kode_lapak ?>' class='btn btn-primary'>Sewa</a>
+                        <a href='#largeModal' data-toggle="modal" data-target="#largeModal<?=$row->kode_lapak?>" class='btn btn-primary'>EDIT</a>
+                        <a href='<?php echo base_url(); ?>index.php/page/hapus/<?=$row->kode_lapak?>' class='btn btn-danger'>Hapus</a>
+                       
+                        <a href='<?php echo base_url(); ?>index.php/page_transaksi/sewa_lapak/<?=$row->kode_lapak?>' name='kode_lapak' id='kode_lapak' method="post" action = "sewa_lapak.php" class='btn btn-danger'>Sewa</a>
                         
                       </td>
 
@@ -89,7 +82,7 @@
             $kode_lapak = $value->kode_lapak;
             $lokasi_lapak = $value->lokasi_lapak;
             $harga_lapak = $value->harga_lapak;
-            $kode_pedagang = $value->kode_pedagang;
+            // $kode_pedagang = $value->kode_pedagang;
 
          
             ?>
