@@ -7,12 +7,21 @@ class M_laporan extends CI_Model {
     }	
 	
     function tampil_data(){
-		return $this->db->get('tbl_tagihan');
+		$this->db->select('*');
+		$this->db->from('tbl_pedagang');
+		$this->db->join('tbl_lapak', 'tbl_lapak.kode_pedagang = tbl_pedagang.kode_pedagang');
+		$this->db->join('tbl_tagihan', 'tbl_tagihan.kode_lapak = tbl_lapak.kode_lapak');
+		$query = $this->db->get('');
+        return $query->result_array();
 	}
-
-	
-
-	
-
+	    function laporan_data($data){
+		$this->db->from('tbl_pedagang');
+		$this->db->join('tbl_lapak', 'tbl_lapak.kode_pedagang = tbl_pedagang.kode_pedagang');
+		$this->db->join('tbl_tagihan', 'tbl_tagihan.kode_lapak = tbl_lapak.kode_lapak');
+		$this->db->where('MONTH(tbl_tagihan.tanggal)',$data['bulan']); 
+		$this->db->where('YEAR(tbl_tagihan.tanggal)',$data['tahun']);
+		$query = $this->db->get('');
+        return $query->result_array();
+	}
     
 }
