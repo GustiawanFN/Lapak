@@ -37,7 +37,7 @@ class Page_laporan extends CI_Controller
 		$i = $this->input;
 		$dataf = array	(	
 						'bulan'		=> $i->post('bulan'),
-						'tahun'			=>  $i->post('tahun'),
+						'tahun'		=>  $i->post('tahun'),
 						);	
 		$dataku = $this->M_laporan->laporan_data($dataf);
 		$data = array('dataku'=>$dataku);
