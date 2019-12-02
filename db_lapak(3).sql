@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 26 Nov 2019 pada 16.43
+-- Waktu pembuatan: 01 Des 2019 pada 18.29
 -- Versi server: 10.1.39-MariaDB
 -- Versi PHP: 7.3.5
 
@@ -107,8 +107,9 @@ CREATE TABLE `tbl_tagihan` (
 
 INSERT INTO `tbl_tagihan` (`id`, `tanggal`, `kode_lapak`, `jumlah`) VALUES
 (1, '2019-11-22', 1, 12000),
-(2, '2019-11-22', 1, 12000),
-(3, '2019-11-25', 22, 100000);
+(3, '2019-11-25', 22, 100000),
+(4, '2019-11-27', 5, 100000),
+(6, '2019-12-01', 5, 100000);
 
 --
 -- Indexes for dumped tables
@@ -158,7 +159,7 @@ ALTER TABLE `tbl_pedagang`
 -- AUTO_INCREMENT untuk tabel `tbl_tagihan`
 --
 ALTER TABLE `tbl_tagihan`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
